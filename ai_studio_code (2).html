@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Divine Juls — Yoga Teacher & Sound Healing | Atlanta, GA</title>
+  <meta name="description" content="Divine Juls — Doctor of Public Health, yoga teacher, and sound healer. Queer-affirming wellness rooted in research, led by spirit." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rose: #D98997; --wine: #A64166; --blush: #D9ADC2;
+      --sage: #4d7a3a; --slate: #878CA3; --cream: #FAF7F4;
+      --ink: #3a3035;
+      --sig-gradient: linear-gradient(135deg, #D98997 0%, #D9ADC2 30%, #b8c9d6 55%, #6A8B53 85%, #878CA3 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--ink); font-family: 'Montserrat', sans-serif; font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+    /* --- NAVIGATION --- */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.25rem 2.5rem; display: flex; align-items: center; justify-content: space-between;
+      transition: background 0.4s, box-shadow 0.4s;
+    }
+    nav.scrolled { background: rgba(250,247,244,0.96); box-shadow: 0 1px 20px rgba(166,65,102,0.08); backdrop-filter: blur(12px); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--wine); text-decoration: none; }
+    .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+    .nav-links a { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate); text-decoration: none; font-weight: 500; }
+    .nav-cta { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--wine); border: 1px solid var(--wine); padding: 0.55rem 1.3rem; border-radius: 100px; text-decoration: none; transition: 0.3s; }
+    .nav-cta:hover { background: var(--wine); color: #fff; }
+
+    /* --- HERO & BOTANICALS --- */
+    #home { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 5rem; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, #f3e7e9 0%, #FAF7F4 100%); z-index: -1; }
+    .hero-logo { width: clamp(220px, 30vw, 300px); margin-bottom: 2rem; z-index: 1; animation: logoFade 1.8s ease; }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(2.5rem, 6vw, 5rem); color: var(--wine); line-height: 1.1; margin-bottom: 1.5rem; z-index: 1; }
+    .hero-sub { max-width: 500px; color: var(--slate); margin-bottom: 2.5rem; z-index: 1; }
+
+    /* --- SECTIONS --- */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); font-weight: 600; display: block; margin-bottom: 1rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--wine); margin-bottom: 1.5rem; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    
+    .photo-frame { border-radius: 24px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); aspect-ratio: 3/4; }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* --- CARDS --- */
+    .offerings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+    .card { background: #fff; padding: 3rem 2rem; border-radius: 20px; text-decoration: none; color: inherit; transition: 0.3s; border: 1px solid #f0f0f0; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(166,65,102,0.08); }
+
+    /* --- FOOTER --- */
+    footer { background: var(--ink); color: #fff; padding: 4rem 2rem; text-align: center; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.8rem; margin-bottom: 1rem; display: block; }
+
+    @keyframes logoFade { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    @media (max-width: 768px) { .grid { grid-template-columns: 1fr; gap: 2rem; text-align: center; } .nav-links { display: none; } }
+  </style>
+</head>
+<body>
+
+  <nav id="main-nav">
+    <a href="#home" class="nav-logo">Divine Juls</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#yoga">Yoga</a></li>
+      <li><a href="#sound">Sound</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <a href="#connect" class="nav-cta">Book a Session</a>
+  </nav>
+
+  <section id="home">
+    <div class="hero-bg"></div>
+    <img src="assets/logo.png" alt="Divine Juls Logo" class="hero-logo" />
+    <h1 class="hero-title">Rooted in research.<br />Led by spirit.</h1>
+    <p class="hero-sub">A queer-affirming sanctuary where Public Health expertise meets sacred somatic practice in Atlanta, GA.</p>
+    <a href="#about" class="nav-cta" style="background: var(--sage); border: none; color: white; padding: 1rem 2.5rem;">Explore the Practice</a>
+  </section>
+
+  <section id="about">
+    <div class="container grid">
+      <div class="photo-frame">
+        <img src="assets/juls-photo.jpeg" alt="Julianna with singing bowls" />
+      </div>
+      <div>
+        <span class="label">Meet Juls</span>
+        <h2 class="section-title">The science of healing meets the wisdom of the body.</h2>
+        <p>As a Doctor of Public Health (DrPH) and RYT-200 yoga teacher, Julianna bridges the gap between evidence-based wellness and embodied healing.</p>
+        <p style="margin-top: 1rem;">Based in Atlanta, she creates space for LGBTQIA+ and BIPOC communities to land, breathe, and return to themselves through trauma-informed care.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="yoga" style="background: #ebf0e5;">
+    <div class="container grid">
+      <div class="order-mobile">
+        <span class="label">Movement</span>
+        <h2 class="section-title">Rooted Yoga</h2>
+        <p>Trauma-informed, queer-affirming flows designed to ground the nervous system. Drawing from yin and restorative traditions, these sessions focus on choice, breath, and somatic awareness.</p>
+        <a href="#connect" class="nav-cta" style="display:inline-block; margin-top: 2rem;">Join a Class</a>
+      </div>
+      <div class="photo-frame">
+        <img src="assets/juls-yoga.jpeg" alt="Juls practicing yoga in nature" />
+      </div>
+    </div>
+  </section>
+
+  <section id="sound">
+    <div class="container grid">
+      <div class="photo-frame">
+        <img src="assets/juls-bowls.jpeg" alt="Crystal singing bowls" />
+      </div>
+      <div>
+        <span class="label">Vibrational Medicine</span>
+        <h2 class="section-title">Sacred Sound</h2>
+        <p>Crystal singing bowls produce pure tones that resonate with the body’s frequency—quieting the mind and releasing held tension. This is not just listening; it is an integration of the whole self.</p>
+        <a href="#connect" class="nav-cta" style="display:inline-block; margin-top: 2rem;">Book a Sound Bath</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="connect" style="text-align: center;">
+    <div class="container">
+      <span class="label">Connect</span>
+      <h2 class="section-title">Let’s begin.</h2>
+      <p style="max-width: 600px; margin: 0 auto 2.5rem;">Available for private sessions, group sound baths, community events, and Public Health consulting.</p>
+      <a href="mailto:hello@divinejuls.com" class="nav-cta" style="background: var(--wine); color: white; border: none; padding: 1.2rem 3rem;">Send an Inquiry</a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Divine Juls</span>
+    <p>Yoga Teacher & Sound Healing • Atlanta, GA</p>
+    <p style="opacity: 0.4; font-size: 0.7rem; margin-top: 2rem;">© 2026 Divine Juls. Made with intention.</p>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
+</body>
+</html>
